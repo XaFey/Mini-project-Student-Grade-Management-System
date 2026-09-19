@@ -11,7 +11,8 @@ setup(
             "grade-system = grade_system.cli:app",
         ],
     },
-    author = "Student Name",
-    author_email="student@example.com"
-    description = "Student Grade mMnagement System"
-)
+    author = "Xa'Nah Greene",
+    author_email="xanah.greene@students.cau.edu",
+    description = "Student Grade Management System",
+
+    )
