@@ -1,5 +1,3 @@
-from html import entities
-
 import typer
 from .models import Student, Course
 from .storage import GradeStorage

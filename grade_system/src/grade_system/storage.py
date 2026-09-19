@@ -1,6 +1,7 @@
 import csv
 import os
 from .models import Student, Course
+from .models import Gradeable
 
 class GradeStorage:
     """Handles CSV storage for grades. """
@@ -11,7 +12,7 @@ class GradeStorage:
                 writer = csv.DictWriter(f, fieldnames=["type", "name", "grades", "student_grades"])
                 writer.writeheader()
 
-    def save(self, entity: "Gradeable"):
+    def save(self, entity:"Gradeable"):
         """Save a gradeable entity to CSV."""
         with open(self.file_path, 'a', newline='') as f:
             writer = csv.DictWriter(f, fieldnames=["type", "name", "grades", "student_grades"])

@@ -1,7 +1,8 @@
-from abs import ABC, abstractmethod
+from abc import ABC, abstractmethod
 import csv
 import os
-class Gradeble(ABC):
+
+class Gradeable(ABC):
     """Abstract base class for gradeable entities."""
     @abstractmethod
     def calculate_grade(self):
@@ -10,7 +11,8 @@ class Gradeble(ABC):
     @abstractmethod
     def to_dict(self):
         pass
-class Student(Gradeble):
+
+class Student(Gradeable):
     def __init__(self, name:str, grades: list[float]):
         """Student class with name and grades."""
         self.name = name
@@ -24,7 +26,7 @@ class Student(Gradeble):
         """Return student data as dictionary."""
         return {"type": "student", "name": self.name, "grades": ",".join(map(str, self.grades))}
 
-class Course(Gradeble):
+class Course(Gradeable):
     def __init__(self, name: str, student_grades: dict[str, float]):
         """Course class with name and student grades."""
         self.name = name
